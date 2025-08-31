@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: one-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    port: 3000
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: SQL_DSN
+        value: sqlite:data.db
+      - key: SESSION_SECRET
+        generateValue: true
